@@ -28,11 +28,13 @@
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
       }
 
-      .extrude-game button {
+      .try_game {
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
         border: none;
         border-radius: 10px;
-        outline: 0;
-        padding: 15px;
+        outline: none;
         color: white;
         background-color: #000;
         text-align: center;
@@ -41,14 +43,9 @@
         font-size: 20px;
       }
 
-      .extrude-game button:hover {
+      .try_game:hover {
         opacity: 0.8;
         background-color: green;
-      }
-
-      .try_it {
-        text-decoration: none;
-        color: white;
       }
     </style>
   </head>
@@ -65,13 +62,9 @@
         Look at Blocks, Split Them, Extrude Them & Add Trees.
       </p>
 
-      <button
-        onclick="window.location.href = 'https://anilbk.itch.io/extrude-game';"
+      <a href="https://anilbk.itch.io/extrude-game" class="try_game"
+        >Try It ></a
       >
-        <a href="https://anilbk.itch.io/extrude-game" class="try_it"
-          >Try It ></a
-        >
-      </button>
     </div>
   </body>
 </html>
