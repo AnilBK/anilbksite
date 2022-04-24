@@ -1,49 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
+  <head>
+    <div class="about-section">
+      <h1>Anil BK's Personal Home Page</h1>
+    </div>
 
-.price {
-  color: grey;
-  font-size: 22px;
-}
+    <style>
+      .about-section {
+        padding: 10px;
+        text-align: center;
+        background-color: #c68916;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+      .extrude-game {
+        padding: 20px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        transition: 0.3s;
+        max-width: 400px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+      }
 
-.card button:hover {
-  opacity: 0.7;
-  background-color: green;
-}
-</style>
-</head>
-<body>
+      .extrude-game:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+      }
 
-<h2 style="text-align:center">Product Card</h2>
+      .extrude-game button {
+        border: none;
+        border-radius: 10px;
+        outline: 0;
+        padding: 15px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 90%;
+        font-size: 20px;
+      }
 
-<div class="card">
-  <img src="jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>Tailored Jeans</h1>
-  <p class="price">$19.99</p>
-  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-  <p><button>Add to Cart</button></p>
-</div>
+      .extrude-game button:hover {
+        opacity: 0.8;
+        background-color: green;
+      }
 
-</body>
+      .try_it {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <br />
+
+    <div class="extrude-game">
+      <h3 style="text-align: center">Current Project: Extrude Game</h3>
+
+      <img src="extrude-game.png" style="width: 100%" />
+
+      <p style="color: purple; padding: 2px">
+        Look at Blocks, Split Them, Extrude Them & Add Trees.
+      </p>
+
+      <button
+        onclick="window.location.href = 'https://anilbk.itch.io/extrude-game';"
+      >
+        <a href="https://anilbk.itch.io/extrude-game" class="try_it"
+          >Try It ></a
+        >
+      </button>
+    </div>
+  </body>
 </html>
