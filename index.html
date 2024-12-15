@@ -145,6 +145,27 @@
       overflow-x: auto;
       scroll-behavior: smooth;
       padding: 20px;
+      scrollbar-width: auto;
+      /* For Firefox */
+      scrollbar-color: #888 #e0e0e0;
+      /* For Firefox */
+      -webkit-overflow-scrolling: touch;
+      /* For iOS Safari */
+    }
+
+    .competitions-project-cards-container::-webkit-scrollbar {
+      height: 12px;
+      /* For Chrome, Safari, and Opera */
+    }
+
+    .competitions-project-cards-container::-webkit-scrollbar-thumb {
+      background: #888;
+      /* For Chrome, Safari, and Opera */
+    }
+
+    .competitions-project-cards-container::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      /* For Chrome, Safari, and Opera */
     }
 
     .competitions-project-card {
@@ -233,7 +254,7 @@
       color: white;
     }
 
-    .godot-credit{
+    .godot-credit {
       width: 820px;
       height: 461px;
     }
