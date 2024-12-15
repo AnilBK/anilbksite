@@ -63,6 +63,7 @@
 
     #competitions {
       background-color: #d3d3d3;
+      position: relative;
     }
 
     #contact {
@@ -135,6 +136,101 @@
       padding: 5px 10px;
       border-radius: 20px;
       font-size: 0.8em;
+    }
+
+    .competitions-project-cards-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px;
+    }
+
+    .competitions-project-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+      flex: 0 0 auto;
+      width: 300px;
+    }
+
+    .competitions-project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .competitions-project-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .competitions-project-details {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .competitions-project-badge {
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .emoji {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    .ribbon span {
+      position: absolute;
+      display: block;
+      width: 160px;
+      padding: 10px 0;
+      background-color: #f0f0f0;
+      text-align: center;
+      transform: rotate(45deg);
+      right: -40px;
+      top: 20px;
+    }
+
+    .winner .competitions-project-badge,
+    .winner .ribbon span {
+      background-color: #FFD700;
+      color: #333;
+    }
+
+    .second-place .competitions-project-badge,
+    .second-place .ribbon span {
+      background-color: #e779de;
+      color: #333;
+    }
+
+    .third-place .competitions-project-badge,
+    .third-place .ribbon span {
+      background-color: #CD7F32;
+      color: #333;
+    }
+
+    .participated .competitions-project-badge {
+      background-color: #4CAF50;
+      color: white;
     }
 
     @media screen and (max-width: 600px) {
@@ -278,12 +374,61 @@
   </section>
 
   <section id="competitions" class="section">
-    <div>
-      <h1>Competitions</h1>
-      <p>Won CodeFest 2023.</p>
-      <p>2nd at Techtrix Ideathon 2022.</p>
-      <p>4th at KIST Fest 2022.</p>
-      <p>Participated at KIST Hackathon 2023 & Techtrix Hackathon 2022.</p>
+    <div class="competitions-project-cards-container">
+      <div class="competitions-project-card winner">
+        <div class="ribbon"><span>1st</span></div>
+        <div class="emoji">🏆</div>
+        <div class="competitions-project-title">CodeWar</div>
+        <div class="competitions-project-details">
+          <p>📅 KIST HackFest 2024</p>
+          <p>🏫 Organized by: KIST College & SS</p>
+          <p>🥇 Position: First Place</p>
+        </div>
+      </div>
+
+      <div class="competitions-project-card second-place">
+        <div class="ribbon"><span>2nd</span></div>
+        <div class="emoji">🥈</div>
+        <div class="competitions-project-title">Interactive Programming</div>
+        <div class="competitions-project-details">
+          <p>📅 Idea Pitching Competition 2079</p>
+          <p>🏫 Organized by: New Summit College</p>
+          <p>🥈 Position: Second Place</p>
+        </div>
+      </div>
+
+      <div class="competitions-project-card third-place">
+        <div class="ribbon"><span>3rd</span></div>
+        <div class="emoji">🥉</div>
+        <div class="competitions-project-title">Smart Parking</div>
+        <div class="competitions-project-details">
+          <p>📅 HEx Genius Hackathon 2023</p>
+          <p>🏫 Organized by: Himalaya College of Engineering</p>
+          <p>🥉 Position: Third Place</p>
+        </div>
+      </div>
+
+      <div class="competitions-project-card participated">
+        <div class="ribbon"><span>Participated</span></div>
+        <div class="emoji">🌟</div>
+        <div class="competitions-project-title">Complaint System</div>
+        <div class="competitions-project-details">
+          <p>📅 TechTrix-2023 Hackathon</p>
+          <p>🏫 Organized by: New Summit College</p>
+          <p>🏅 Position: Participant</p>
+        </div>
+      </div>
+
+      <div class="competitions-project-card participated">
+        <div class="ribbon"><span>Participated</span></div>
+        <div class="emoji">🌟</div>
+        <div class="competitions-project-title">Interactive Note Taking</div>
+        <div class="competitions-project-details">
+          <p>📅 KIST HackFest 2024 Hackathon</p>
+          <p>🏫 Organized by: KIST College & SS</p>
+          <p>🏅 Position: Participant</p>
+        </div>
+      </div>
     </div>
   </section>
 
