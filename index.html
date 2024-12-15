@@ -1,220 +1,320 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      .about-section {
-        padding: 10px;
-        text-align: center;
-        background-color: #c68916;
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-      }
 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .top-fixed-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #c68916;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+
+    .navbar-container {
+      display: flex;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .nav-link {
+      flex: 1;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+
+    .nav-link:active,
+    .nav-link.active {
+      background-color: #4caf50;
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .section:first-of-type {
+      padding-top: 148px;
+    }
+
+    #projects {
+      background-color: #f4f4f4;
+    }
+
+    #workexperience {
+      background-color: #e0e0e0;
+    }
+
+    #competitions {
+      background-color: #d3d3d3;
+    }
+
+    #contact {
+      background-color: #c0c0c0;
+    }
+
+    .about-section {
+      padding: 10px;
+      text-align: center;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .project_section {
+      padding: 20px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+      max-width: 400px;
+      margin: 40px auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .project_section:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+    }
+
+    .project_title {
+      text-align: center;
+    }
+
+    .project_thumbnail {
+      width: 100%;
+    }
+
+    .project_description {
+      color: purple;
+      padding: 2px;
+    }
+
+    .try_link {
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: calc(100% - 40px);
+      font-size: 20px;
+    }
+
+    .try_link:hover {
+      opacity: 0.8;
+      background-color: green;
+    }
+
+    .technologies_used_div {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .tehnology_tag {
+      background-color: #e9ecef;
+      color: #495057;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8em;
+    }
+
+    @media screen and (max-width: 600px) {
       .project_section {
-        padding: 20px;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-        transition: 0.3s;
-        max-width: 400px;
-        margin: auto;
-        text-align: center;
-        font-family: arial;
+        max-width: 100%;
+        padding: 10px;
       }
+    }
+  </style>
+</head>
 
-      .project_section:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
-      }
-
-      .project_title {
-        text-align: center;
-      }
-
-      .project_thumbnail {
-        width: 100%;
-      }
-
-      .project_description {
-        color: purple;
-        padding: 2px;
-      }
-
-      .try_link {
-        text-decoration: none;
-        padding: 10px 20px;
-        display: inline-block;
-        border: none;
-        border-radius: 10px;
-        outline: none;
-        color: white;
-        background-color: #000;
-        text-align: center;
-        cursor: pointer;
-        width: calc(100% - 40px);
-        font-size: 20px;
-      }
-
-      .try_link:hover {
-        opacity: 0.8;
-        background-color: green;
-      }
-
-      .technologies_used_div {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-      }
-      
-      .tehnology_tag {
-        background-color: #e9ecef;
-        color: #495057;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 0.8em;
-      }
-
-      @media screen and (max-width: 600px) {
-        .project_section {
-          max-width: 100%;
-          padding: 10px;
-        }
-      }
-    </style>
-
+<body>
+  <div class="top-fixed-container">
     <div class="about-section">
-      <i><h1>Anil BK's Personal Home Page</h1></i>
+      <h1><i>Anil BK's Personal Home Page</i></h1>
     </div>
 
-    <h2 style="text-align: center">My Projects</h2>
-  </head>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#projects" class="nav-link" data-section="project">My Projects</a>
+        <a href="#workexperience" class="nav-link" data-section="workexperience">Work Experience</a>
+        <a href="#competitions" class="nav-link" data-section="competitions">Competitions</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </div>
+    </nav>
+  </div>
 
-  <body>
-    <br />
+  <section id="projects" class="section">
+    <div>
+      <div class="project_section">
+        <h3 class="project_title">ANIL Programming Language</h3>
 
-    <div class="project_section">
-      <h3 class="project_title">ANIL Programming Language</h3>
+        <img src="ANIL-Lang.png" class="project_thumbnail" />
 
-      <img src="ANIL-Lang.png" class="project_thumbnail" />
+        <p class="project_description">
+          Python & C++ inspired programming language that transpiles to C and
+          can be embedded within C source files.
+        </p>
 
-      <p class="project_description">
-        Python & C++ inspired programming language that transpiles to C and can be embedded within C source files. 
-      </p>
+        <a href="https://github.com/AnilBK/ANIL" class="try_link" target="_blank">View Project in Github ></a>
 
-      <a href="https://github.com/AnilBK/ANIL" class="try_link"
-        target="_blank">View Project in Github ></a
-      >
-
-      <div class="technologies_used_div">
-        <span class="tehnology_tag">Python</span>
-        <span class="tehnology_tag">C</span>
+        <div class="technologies_used_div">
+          <span class="tehnology_tag">Python</span>
+          <span class="tehnology_tag">C</span>
+        </div>
       </div>
 
-    </div>
+      <div class="project_section">
+        <h3 class="project_title">Sclone Game Engine</h3>
 
-    <br /><br />
+        <img src="Sclone-game-engine.png" class="project_thumbnail" />
 
-    <div class="project_section">
-      <h3 class="project_title">Sclone Game Engine</h3>
+        <p class="project_description">
+          Make Video games using blocks.Inspired by Scratch.
+        </p>
 
-      <img src="Sclone-game-engine.png" class="project_thumbnail" />
+        <a href="https://github.com/AnilBK/Sclone" class="try_link" target="_blank">View Project in Github ></a>
 
-      <p class="project_description">
-        Make Video games using blocks.Inspired by Scratch. 
-      </p>
-
-      <a href="https://github.com/AnilBK/Sclone" class="try_link"
-        target="_blank">View Project in Github ></a
-      >
-
-      <div class="technologies_used_div">
-        <span class="tehnology_tag">C++</span>
-        <span class="tehnology_tag">SFML</span>
+        <div class="technologies_used_div">
+          <span class="tehnology_tag">C++</span>
+          <span class="tehnology_tag">SFML</span>
+        </div>
       </div>
 
-    </div>
+      <div class="project_section">
+        <h3 class="project_title">Extrude Game</h3>
 
-    <br /><br />
+        <img src="extrude-game.png" class="project_thumbnail" />
 
-    <div class="project_section">
-      <h3 class="project_title">Extrude Game</h3>
+        <p class="project_description">
+          Look at Blocks, Split Them, Extrude Them & Add Trees.
+        </p>
 
-      <img src="extrude-game.png" class="project_thumbnail" />
+        <a href="https://anilbk.itch.io/extrude-game" class="try_link" target="_blank">Try It ></a>
 
-      <p class="project_description">
-        Look at Blocks, Split Them, Extrude Them & Add Trees.
-      </p>
-
-      <a href="https://anilbk.itch.io/extrude-game" class="try_link"
-        target="_blank">Try It ></a
-      >
-      
-      <div class="technologies_used_div">
-        <span class="tehnology_tag">C++</span>
-        <span class="tehnology_tag">raylib</span>
+        <div class="technologies_used_div">
+          <span class="tehnology_tag">C++</span>
+          <span class="tehnology_tag">raylib</span>
+        </div>
       </div>
 
-    </div>
+      <div class="project_section">
+        <h3 class="project_title">
+          8 bit CPU, A programming language & A compiler.
+        </h3>
 
-    <br /><br />
+        <img src="cpu-project.png" class="project_thumbnail" />
 
-    <div class="project_section">
-      <h3 class="project_title">
-        8 bit CPU, A programming language & A compiler.
-      </h3>
+        <p class="project_description">
+          A 8 bit CPU, A programming language to program the CPU and a
+          compiler which generates the code for same CPU.
+        </p>
 
-      <img src="cpu-project.png" class="project_thumbnail" />
+        <a href="https://www.youtube.com/watch?v=BqX9-EcepF0" class="try_link" target="_blank">
+          Watch The CPU in Action ></a>
+        <br />
+        <br />
 
-      <p class="project_description">
-        A 8 bit CPU, A programming language to program the CPU and a compiler
-        which generates the code for same CPU.
-      </p>
+        <a href="https://github.com/AnilBK/Simple-CPU" class="try_link" target="_blank">View Project in Github ></a>
 
-      <a href="https://www.youtube.com/watch?v=BqX9-EcepF0" class="try_link"
-        target="_blank">
-        Watch The CPU in Action ></a
-      >
-
-      <br />
-      <br />
-
-      <a href="https://github.com/AnilBK/Simple-CPU" class="try_link"
-        target="_blank">View Project in Github ></a
-      >
-      
-      <div class="technologies_used_div">
-        <span class="tehnology_tag">Python</span>
-        <span class="tehnology_tag">Digital</span>
+        <div class="technologies_used_div">
+          <span class="tehnology_tag">Python</span>
+          <span class="tehnology_tag">Digital</span>
+        </div>
       </div>
 
-    </div>
+      <div class="project_section">
+        <h3 class="project_title">A Game Engine And A game made within.</h3>
 
-    <br /><br />
+        <img src="game-engine.png" class="project_thumbnail" />
 
-    <div class="project_section">
-      <h3 class="project_title">A Game Engine And A game made within.</h3>
+        <p class="project_description">
+          A test scratch like small game engine. And a game made in that
+          engine.
+        </p>
 
-      <img src="game-engine.png" class="project_thumbnail" />
+        <a href="https://youtu.be/lAkaeoLJ9yI" class="try_link" target="_blank">
+          Watch The Game Engine in Action ></a>
 
-      <p class="project_description">
-        A test scratch like small game engine. And a game made in that engine.
-      </p>
+        <br />
+        <br />
 
-      <a href="https://youtu.be/lAkaeoLJ9yI" class="try_link"
-        target="_blank">
-        Watch The Game Engine in Action ></a
-      >
+        <a href="https://youtu.be/v-6rdA6c8i8" class="try_link" target="_blank">Watch A Catch Game made in that Engine
+          ></a>
 
-      <br />
-      <br />
-
-      <a href="https://youtu.be/v-6rdA6c8i8" class="try_link"
-        target="_blank">Watch A Catch Game made in that Engine ></a
-      >
-      
-      <div class="technologies_used_div">
-        <span class="tehnology_tag">Godot Game Engine</span>
-        <span class="tehnology_tag">raylib</span>
+        <div class="technologies_used_div">
+          <span class="tehnology_tag">Godot Game Engine</span>
+          <span class="tehnology_tag">raylib</span>
+        </div>
       </div>
-
     </div>
-  </body>
+  </section>
+
+  <section id="workexperience" class="section">
+    <div>
+      <h1>Work Experience</h1>
+      <p>
+        2021-2022 Worked as Open Source Contributor for Godot Game Engine.
+      </p>
+    </div>
+  </section>
+
+  <section id="competitions" class="section">
+    <div>
+      <h1>Competitions</h1>
+      <p>Won CodeFest 2023.</p>
+      <p>2nd at Techtrix Ideathon 2022.</p>
+      <p>4th at KIST Fest 2022.</p>
+      <p>Participated at KIST Hackathon 2023 & Techtrix Hackathon 2022.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div>
+      <h1>Contact Me</h1>
+      <p>
+        <a href="mailto:anilforextra@gmail.com">anilforextra@gmail.com</a>
+      </p>
+      <p><a href="https://github.com/AnilBK" target="_blank">Github</a></p>
+    </div>
+  </section>
+
+  <script>
+    function updateNavbar() {
+      const sections = document.querySelectorAll(".section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          navLinks[index].classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", updateNavbar);
+    updateNavbar();
+  </script>
+</body>
+
 </html>
